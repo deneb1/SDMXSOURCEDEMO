@@ -67,7 +67,8 @@ public class MyStructureWriter {
    @Autowired
     private DataWriterManager dataWriterManager;
     
- 
+ private static OutputStream dataFile;
+ public static OutputStream getDataFile(){return dataFile;}
    
   /* @Autowired
     private SampleDataWriter sampleDataWriter;
@@ -82,7 +83,7 @@ public class MyStructureWriter {
                 
                 ExpHeaderSchemeBuilder headerbuilder=new ExpHeaderSchemeBuilder();
                 HeaderBean hb=headerbuilder.buildheader(res.getMetadata().getUid(),"FENIX");
-                 beans.setHeader(hb);
+          beans.setHeader(hb);
                  beans.addAgencyScheme(agencySchemeBuilder.buildAgencyScheme("FENIX", "Fenix"));
                 if(res!=null && codeList!=null){
                     Iterator li=codeList.iterator();
@@ -119,6 +120,7 @@ public class MyStructureWriter {
 		File structureFile = new File("src/main/resources/sdmx/data/sample_data.xml");
 		System.out.println("File Deleted : "+ structureFile.delete());
 		System.out.println("File Created : "+structureFile.createNewFile());
-		return new FileOutputStream(structureFile);
+		dataFile=new FileOutputStream(structureFile);
+                return dataFile;
 	}
 }

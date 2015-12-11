@@ -52,6 +52,10 @@ public class ExportSDMX {
     @Autowired
     private MyStructureWriter fileWriter;
     
+    private   OutputStream structurefile;
+    public  OutputStream getStructurefile(){return structurefile;}
+    private  OutputStream datafile;
+      public  OutputStream getDatafile(){return datafile;}
     private void writeData(File structureFile,String name) throws IOException {
         //Step 1 - Create Data Writer Engine
         DataFormat dataFormat = new SdmxDataFormat(DATA_TYPE.COMPACT_2_1);
@@ -70,7 +74,7 @@ public class ExportSDMX {
 	sampleDataWriter.writeSampleFlatData(dsd, dataflow, dataWriterEngine);
     }
     
-    public static void main(String[] args) throws IOException {
+    public  void main(String[] args) throws IOException {
 	//Step 1 - Get the Application Context
 	ClassPathXmlApplicationContext applicationContext = 
                 new ClassPathXmlApplicationContext("spring/spring-beans-chapter1.xml");
@@ -92,7 +96,7 @@ public class ExportSDMX {
      * @param codeList
      * @throws IOException
      */
-    public static void execution(Resource<DSDDataset, Object[]> res,Collection<Resource<DSDCodelist,Code>> codeList) throws IOException {        
+    public  void execution(Resource<DSDDataset, Object[]> res,Collection<Resource<DSDCodelist,Code>> codeList) throws IOException {        
         //Step 1 - Get the Application Context
 	ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("sdmx/spring/context.xml");
 	//Step 2 - Get the main class from the Spring beans container
@@ -104,6 +108,7 @@ public class ExportSDMX {
 	StructureFormat outputFormat = new SdmxStructureFormat(sdmxFormat);        
        //Step 5 - Write the structures out to the fie
 	main.fileWriter.writeStructureToFile(outputFormat, outStructure,res,codeList);
+        datafile=main.fileWriter.getDataFile();
         applicationContext.close();
     }
 	
@@ -122,12 +127,14 @@ public class ExportSDMX {
         File structureFile = new File(name);//"src/main/resources/data/chapter3/sample_data.xml"
         System.out.println("File Deleted : "+ structureFile.delete());
         System.out.println("File Created : "+structureFile.createNewFile());
+        
         return new FileOutputStream(structureFile);
     }
     private OutputStream getFileOutputStreamStructure() throws IOException {
         File structureFile = new File("src/main/resources/sdmx/structures/webservice_structures.xml");
         System.out.println("File Deleted : "+ structureFile.delete());
         System.out.println("File Created : "+structureFile.createNewFile());
-        return new FileOutputStream(structureFile);
+        structurefile=new FileOutputStream(structureFile);
+        return structurefile;
     }
 }
