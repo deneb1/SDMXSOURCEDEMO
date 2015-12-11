@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.179" errors="0" skipped="0" tests="6" name="demo.sdmxsource.test.webservice.builder.TestBuilders">
+  <properties>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\bin"/>
+    <property name="java.vm.version" value="24.0-b25"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="OpenJDK Client VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="Service Pack 2"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo"/>
+    <property name="java.runtime.version" value="1.7.0-internal-gluxon_2012_11_23_16_20-b00"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\endorsed"/>
+    <property name="os.arch" value="x86"/>
+    <property name="java.io.tmpdir" value="C:\Users\joyeux\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows Vista"/>
+    <property name="classworlds.conf" value="C:\Users\joyeux\AppData\Roaming\NetBeans\7.2\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files\Windows Imaging\;C:\Program Files\Common Files\Roxio Shared\9.0\DLLShared\;C:\Windows\Kixtart\;C:\Program Files\Common Files\Roxio Shared\DLLShared\;C:\Program Files\Common Files\Roxio Shared\10.0\DLLShared\;C:\Windows\Kixtart;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Microsoft SQL Server\80\Tools\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft SQL Server\90\DTS\Binn\;C:\Program Files\Microsoft SQL Server\90\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 8\Common7\IDE\PrivateAssemblies\;C:\Program Files\Apache Software Foundation\apache-maven-2.2.1\bin;C:\Java\bin;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Windows Live\Shared;C:\Program Files\TortoiseHg\;C:\ant\apache-ant-1.8.4\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files\nodejs\;C:\Program Files\Skype\Phone\;C:\Program Files\QuickTime\QTSystem\;C:\Program Files\Mercurial;C:\Users\joyeux\AppData\Roaming\npm;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot Client Compiler"/>
+    <property name="os.version" value="6.0"/>
+    <property name="user.home" value="C:\Users\joyeux"/>
+    <property name="user.timezone" value="Europe/Berlin"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="joyeux"/>
+    <property name="java.class.path" value="C:\Users\joyeux\AppData\Roaming\NetBeans\7.2\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="32"/>
+    <property name="java.home" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0-internal"/>
+    <property name="java.ext.dirs" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\resources.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\rt.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\sunrsasign.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\jsse.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\jce.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\charsets.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\lib\jfr.jar;C:\Users\joyeux\PortableApps\CommonFiles\OpenJDK\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Users\joyeux\AppData\Roaming\NetBeans\7.2\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
+  </properties>
+  <testcase time="0.142" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildDataFlow"/>
+  <testcase time="0.01" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildIndicatorCodelist"/>
+  <testcase time="0.001" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildCountryCodelist"/>
+  <testcase time="0" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildConceptScheme"/>
+  <testcase time="0" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildDataStructure"/>
+  <testcase time="0.003" classname="demo.sdmxsource.test.webservice.builder.TestBuilders" name="testBuildAgencyScheme"/>
+</testsuite>

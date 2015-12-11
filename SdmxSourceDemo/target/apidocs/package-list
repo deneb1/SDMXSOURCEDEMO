@@ -1,0 +1,16 @@
+demo.sdmxsource.webservice.builder
+demo.sdmxsource.webservice.engine
+demo.sdmxsource.webservice.factory
+demo.sdmxsource.webservice.main.chapter1
+demo.sdmxsource.webservice.main.chapter1.builder
+demo.sdmxsource.webservice.main.chapter1.writer
+demo.sdmxsource.webservice.main.chapter2
+demo.sdmxsource.webservice.main.chapter3
+demo.sdmxsource.webservice.main.chapter3.writer
+demo.sdmxsource.webservice.main.chapter4
+demo.sdmxsource.webservice.main.finalPackage
+demo.sdmxsource.webservice.main.finalPackage.builder
+demo.sdmxsource.webservice.main.finalPackage.writer
+demo.sdmxsource.webservice.manager.impl
+demo.sdmxsource.webservice.model
+demo.sdmxsource.webservice.rest
