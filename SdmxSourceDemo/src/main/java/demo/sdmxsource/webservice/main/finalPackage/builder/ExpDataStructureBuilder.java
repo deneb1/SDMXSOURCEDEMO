@@ -5,13 +5,16 @@ import org.fao.fenix.commons.msd.dto.data.Resource;
 import org.fao.fenix.commons.msd.dto.full.DSDColumn;
 import org.fao.fenix.commons.msd.dto.full.DSDDataset;
 import org.fao.fenix.commons.msd.dto.full.OjCodeList;
+import org.fao.fenix.commons.msd.dto.type.DataType;
 import org.sdmxsource.sdmx.api.constants.ATTRIBUTE_ATTACHMENT_LEVEL;
 import org.sdmxsource.sdmx.api.constants.SDMX_STRUCTURE_TYPE;
 import org.sdmxsource.sdmx.api.model.beans.datastructure.DataStructureBean;
 import org.sdmxsource.sdmx.api.model.beans.reference.StructureReferenceBean;
 import org.sdmxsource.sdmx.api.model.mutable.datastructure.DataStructureMutableBean;
+import org.sdmxsource.sdmx.api.model.mutable.datastructure.DimensionMutableBean;
 import org.sdmxsource.sdmx.sdmxbeans.model.mutable.datastructure.AttributeMutableBeanImpl;
 import org.sdmxsource.sdmx.sdmxbeans.model.mutable.datastructure.DataStructureMutableBeanImpl;
+import org.sdmxsource.sdmx.sdmxbeans.model.mutable.datastructure.DimensionMutableBeanImpl;
 import org.sdmxsource.sdmx.util.beans.reference.StructureReferenceBeanImpl;
 import org.springframework.stereotype.Service;
 
@@ -49,13 +52,20 @@ public class ExpDataStructureBuilder {
                         if(temp.getKey()!=null && temp.getKey()){
                         //Dimension
                         System.out.println("dimension"+temp.getId().toUpperCase());
-                      if(temp.getSubject().equals("time"))
+                      if(temp.getDataType()==DataType.year || temp.getDataType()==DataType.month || temp.getDataType()==DataType.date || temp.getDataType()==DataType.time  )
                       {dsd.addDimension(createConceptReference(temp.getId().toUpperCase()), null).setTimeDimension(true);}  
                       else{
+                          if(temp.getDataType()==DataType.code ){
                           OjCodeList colTemp=(OjCodeList)temp.getDomain().getCodes().iterator().next();
                           System.out.println(colTemp.getIdCodeList().toUpperCase());
                           dsd.addDimension(createConceptReference(temp.getId().toUpperCase()), 
                           createCodelistReference("CL_"+colTemp.getIdCodeList().toUpperCase()));
+                          }
+                          else{
+                              
+                           dsd.addDimension(createConceptReference(temp.getId().toUpperCase()), null).setMeasureDimension(true);//free text
+                           //dsd.addDimension();
+                          }
                       }
                       //dsd.addDimension(createConceptReference("INDICATOR"), createCodelistReference("CL_INDICATOR"));
                     }
@@ -71,7 +81,7 @@ public class ExpDataStructureBuilder {
                         {
                             AttributeMutableBeanImpl amb=new AttributeMutableBeanImpl();
                             amb.setConceptRef(createConceptReference(temp.getId().toUpperCase()));
-                            amb.setAssignmentStatus("conditional");
+                            amb.setAssignmentStatus("Mandatory");
                             /*if(temp.getKey()!=null && temp.getKey()==false){amb.setAttachmentLevel(ATTRIBUTE_ATTACHMENT_LEVEL.DATA_SET);}
                             else*/
                             {

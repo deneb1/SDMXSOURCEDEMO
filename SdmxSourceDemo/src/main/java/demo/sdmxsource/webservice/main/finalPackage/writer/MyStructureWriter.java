@@ -67,29 +67,25 @@ public class MyStructureWriter {
    @Autowired
     private DataWriterManager dataWriterManager;
     
- private static OutputStream dataFile;
- public static OutputStream getDataFile(){return dataFile;}
-   
   /* @Autowired
     private SampleDataWriter sampleDataWriter;
    */
     
     
-    public void writeStructureToFile(StructureFormat outputFormat, OutputStream out,
+    public void writeStructureToFile(StructureFormat outputFormat, OutputStream out,OutputStream out2,
             Resource<DSDDataset,Object[]> res,
             Collection<Resource<DSDCodelist,Code>> codeList)  throws IOException {
                 SdmxBeans beans = new SdmxBeansImpl();
                 
                 
                 ExpHeaderSchemeBuilder headerbuilder=new ExpHeaderSchemeBuilder();
-                HeaderBean hb=headerbuilder.buildheader(res.getMetadata().getUid(),"FENIX");
-          beans.setHeader(hb);
-                 beans.addAgencyScheme(agencySchemeBuilder.buildAgencyScheme("FENIX", "Fenix"));
+                HeaderBean hb=headerbuilder.buildheader(res.getMetadata(),"FENIX");
+                beans.setHeader(hb);
+                beans.addAgencyScheme(agencySchemeBuilder.buildAgencyScheme("FENIX", "Fenix"));
                 if(res!=null && codeList!=null){
                     Iterator li=codeList.iterator();
                     while( li.hasNext() )
-                    {beans.addCodelist(ExpCodelistBuilder.buildCodeList((Resource<DSDCodelist,Code>)li.next()));}     
-
+                    {beans.addCodelist(ExpCodelistBuilder.buildCodeList((Resource<DSDCodelist,Code>)li.next()));}
                 }
           
 	beans.addIdentifiable(conceptSchemeBuilder.myBuildConceptScheme(res.getMetadata().getDsd().getColumns().iterator()));
@@ -106,8 +102,10 @@ public class MyStructureWriter {
         //begining of dataset 
         
         DataFormat dataFormat = new SdmxDataFormat(DATA_TYPE.COMPACT_2_1);
-	DataWriterEngine dataWriterEngine = dataWriterManager.getDataWriterEngine(dataFormat, getFileDataOutputStream());
-	SampleDataWriter sampleDataWriter=new SampleDataWriter();
+	//DataWriterEngine dataWriterEngine = dataWriterManager.getDataWriterEngine(dataFormat, getFileDataOutputStream());
+	DataWriterEngine dataWriterEngine = dataWriterManager.getDataWriterEngine(dataFormat, out2);
+	
+        SampleDataWriter sampleDataWriter=new SampleDataWriter();
        
         sampleDataWriter.writeSampleFlatData(dsd, dfb, dataWriterEngine,res);
         
@@ -120,7 +118,7 @@ public class MyStructureWriter {
 		File structureFile = new File("src/main/resources/sdmx/data/sample_data.xml");
 		System.out.println("File Deleted : "+ structureFile.delete());
 		System.out.println("File Created : "+structureFile.createNewFile());
-		dataFile=new FileOutputStream(structureFile);
-                return dataFile;
+		
+                return new FileOutputStream(structureFile);
 	}
 }

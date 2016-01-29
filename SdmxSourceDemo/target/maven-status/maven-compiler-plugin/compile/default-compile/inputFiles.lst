@@ -1,6 +1,7 @@
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\manager\impl\DemoDataRetrievalManager.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\factory\HtmlStructureOutputFactory.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter1\builder\DataStructureBuilder.java
+C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\finalPackage\builder\ExpHeaderSchemeBuilder.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\model\SqlQuery.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter1\writer\SampleStructureWriter.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\finalPackage\writer\MyStructureWriter.java
@@ -8,8 +9,8 @@ C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdm
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\rest\SdmxWebService.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\finalPackage\builder\ExpAgencySchemeBuilder.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\factory\SqlDataQueryFactory.java
-C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter4\Chapter4ValidatingData.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\model\HtmlOutputFormat.java
+C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter4\Chapter4ValidatingData.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter4\Chapter4DataTransformation.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\main\chapter1\Chapter1WritingStructures.java
 C:\Users\joyeux\Dropbox\fao\SdmxSourceDemo\SdmxSourceDemo\src\main\java\demo\sdmxsource\webservice\engine\HtmlDataWriterEngine.java

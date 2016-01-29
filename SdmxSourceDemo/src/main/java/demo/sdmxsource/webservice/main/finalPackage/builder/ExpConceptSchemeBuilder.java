@@ -30,7 +30,7 @@ public class ExpConceptSchemeBuilder {
         
         public   ConceptSchemeBean     myBuildConceptScheme( Iterator metadata){
         ConceptSchemeMutableBean conceptSchemeMutable = new ConceptSchemeMutableBeanImpl();
-        conceptSchemeMutable.setAgencyId("Fenix");
+        conceptSchemeMutable.setAgencyId("FENIX");
         conceptSchemeMutable.setId("CONCEPTS");
 	conceptSchemeMutable.setVersion("1.0");
         conceptSchemeMutable.addName("en", "Fenix Concepts");

@@ -52,10 +52,7 @@ public class ExportSDMX {
     @Autowired
     private MyStructureWriter fileWriter;
     
-    private   OutputStream structurefile;
-    public  OutputStream getStructurefile(){return structurefile;}
-    private  OutputStream datafile;
-      public  OutputStream getDatafile(){return datafile;}
+
     private void writeData(File structureFile,String name) throws IOException {
         //Step 1 - Create Data Writer Engine
         DataFormat dataFormat = new SdmxDataFormat(DATA_TYPE.COMPACT_2_1);
@@ -86,7 +83,7 @@ public class ExportSDMX {
         File structureFile = new File("src/main/resources/structures/chapter2/structures_full.xml");
 
         main.writeData(structureFile,"src/main/resources/data/chapter3/sample_data.xml");
-        execution(null ,null);
+        execution(null ,null,null ,null);
         applicationContext.close();
 	}
         
@@ -96,7 +93,8 @@ public class ExportSDMX {
      * @param codeList
      * @throws IOException
      */
-    public  void execution(Resource<DSDDataset, Object[]> res,Collection<Resource<DSDCodelist,Code>> codeList) throws IOException {        
+    public  void execution(Resource<DSDDataset, Object[]> res,Collection<Resource<DSDCodelist,Code>> codeList,OutputStream structureFile,
+            OutputStream dataFile) throws IOException {        
         //Step 1 - Get the Application Context
 	ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("sdmx/spring/context.xml");
 	//Step 2 - Get the main class from the Spring beans container
@@ -107,8 +105,10 @@ public class ExportSDMX {
 	STRUCTURE_OUTPUT_FORMAT sdmxFormat = STRUCTURE_OUTPUT_FORMAT.SDMX_V21_STRUCTURE_DOCUMENT;
 	StructureFormat outputFormat = new SdmxStructureFormat(sdmxFormat);        
        //Step 5 - Write the structures out to the fie
-	main.fileWriter.writeStructureToFile(outputFormat, outStructure,res,codeList);
-        datafile=main.fileWriter.getDataFile();
+	//main.fileWriter.writeStructureToFile(outputFormat, outStructure,res,codeList);
+       main.fileWriter.writeStructureToFile(outputFormat, structureFile,dataFile,res,codeList);
+       
+        //main.fileWriter.getDataFile();
         applicationContext.close();
     }
 	
@@ -134,7 +134,7 @@ public class ExportSDMX {
         File structureFile = new File("src/main/resources/sdmx/structures/webservice_structures.xml");
         System.out.println("File Deleted : "+ structureFile.delete());
         System.out.println("File Created : "+structureFile.createNewFile());
-        structurefile=new FileOutputStream(structureFile);
-        return structurefile;
+        
+        return new FileOutputStream(structureFile);
     }
 }
